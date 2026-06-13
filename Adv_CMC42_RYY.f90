@@ -10,7 +10,7 @@ program adv_yin_yang_CMC42_RK4
 !********************************************************************************
 implicit none
 integer,parameter::nx=256,ny=(nx/2)+1,n_epsilon_x=nx/32,n_epsilon_y=(ny-1)/16,mx=(3*nx/4)+1+2*n_epsilon_x&
-,my=((ny-1)/2)+1+2*n_epsilon_y,days=4
+,my=((ny-1)/2)+1+2*n_epsilon_y,days=12
 integer::i,l,n,j,knex,kney
 real*8,parameter::delt=900.0d0
 real*8::a2,a3,a4,t,lx,ly,pi,twopi,dlanda,dphi&

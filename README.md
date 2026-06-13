@@ -1,4 +1,4 @@
-# CMC42 Yin–Yang RK4 Solver
+# Advection CMC42 Yin–Yang RK4 Solver
 
 ## Overview
 This project provides a numerical solver for the 2D advection equation on the Yin–Yang grid using a compact fourth-order MacCormack scheme with a 4/2 spatial discretization formulation and fourth-order Runge–Kutta (RK4) time integration.
