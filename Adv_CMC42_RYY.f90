@@ -1,9 +1,19 @@
 program adv_yin_yang_CMC42_RK4
+!********************************************************************************
+! This program was written by Rasoul Mirzaei Shiri.
+!
+! It solves the Advection equations on a Rectangular Yin-Yang grid (RYY) using a
+! fourth-order MacCormack scheme with Runge-Kutta time integration.
+!
+! The code is developed and employed to solve the 'Advection of the cosine bell over the pole' test case
+! for validation and assessment of the numerical method.
+!********************************************************************************
 implicit none
 integer,parameter::nx=256,ny=(nx/2)+1,n_epsilon_x=nx/32,n_epsilon_y=(ny-1)/16,mx=(3*nx/4)+1+2*n_epsilon_x&
-,my=((ny-1)/2)+1+2*n_epsilon_y
+,my=((ny-1)/2)+1+2*n_epsilon_y,days=4
 integer::i,l,n,j,knex,kney
-real*8::a2,a3,a4,delt,t,lx,ly,pi,twopi,dlanda,dphi&
+real*8,parameter::delt=900.0d0
+real*8::a2,a3,a4,t,lx,ly,pi,twopi,dlanda,dphi&
 ,dtime,ta(2),bbbb,top_x_limit,top_y_limit
 REAL*8::alpha,hene(nx,ny),pne(ny),lne(nx),norm_1,norm_2,norm_in,ut(nx,ny)
 real*8::hee1(mx,my),hee2(mx,my),hen1(mx,my),hen2(mx,my),cnx(mx,my),cny(mx,my),cex(mx,my),cey(mx,my)&
@@ -32,8 +42,7 @@ lx=twopi;ly=pi
 alpha=pi/2.0d0
 dlanda=lx/dble(nx)
 dphi=ly/dble(ny-1)
-delt=900.0d0
-t=12.0d0*86400.0d0;l=int(t/delt)
+t=dble(days)*86400.0d0;l=int(t/delt)
 top_x_limit=(pi*3.0d0/4.0d0)+dble(n_epsilon_x)*dlanda
 top_y_limit=(pi/4.0d0)+dble(n_epsilon_y)*dphi
 write(10,*)'zone            i=',mx,'   j=',my
