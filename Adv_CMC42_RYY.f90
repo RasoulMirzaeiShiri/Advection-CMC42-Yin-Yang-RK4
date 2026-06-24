@@ -14,7 +14,8 @@ integer,parameter::nx=256,ny=(nx/2)+1,n_epsilon_x=nx/32,n_epsilon_y=(ny-1)/16,mx
 integer::i,l,n,j,knex,kney
 real*8,parameter::delt=900.0d0
 real*8::a2,a3,a4,t,lx,ly,pi,twopi,dlanda,dphi&
-,dtime,ta(2),bbbb,top_x_limit,top_y_limit
+,dtime,bbbb,top_x_limit,top_y_limit
+REAL::ta(2)
 REAL*8::alpha,hene(nx,ny),pne(ny),lne(nx),norm_1,norm_2,norm_in,ut(nx,ny)
 real*8::hee1(mx,my),hee2(mx,my),hen1(mx,my),hen2(mx,my),cnx(mx,my),cny(mx,my),cex(mx,my),cey(mx,my)&
 ,dccy(mx,2*(ny-1)),dccx(nx,my),hhn4(mx,my),hn1(mx,my),hn2(mx,my),hn3(mx,my),hhn1(mx,my),hhn2(mx,my)&
