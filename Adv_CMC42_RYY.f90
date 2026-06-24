@@ -224,7 +224,7 @@ call RK4_final(hee1,hee2,he1,he2,he3,he4,mx,my)
 
 
 
-if(n*delt/21600.0d0==dble(floor(n*delt/21600.0d0)))then
+if(dabs(n*delt/21600.0d0-dble(floor(n*delt/21600.0d0)))<=1.0d-10)then
 write(10,*)'zone            i=',mx,' j=',my
 write(20,*)'zone            i=',my,'   j=',mx
 write(30,*)'zone            i=',nx,' j=',ny
